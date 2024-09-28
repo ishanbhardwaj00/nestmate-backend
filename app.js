@@ -14,7 +14,7 @@ import axios from 'axios'
 const app = express()
 app.use(
   cors({
-    origin: 'web-production-c52c.up.railway.app',
+    origin: '*',
     methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE', 'OPTIONS', 'UPDATE'],
     credentials: true,
   })
