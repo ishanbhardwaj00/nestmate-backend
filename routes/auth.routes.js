@@ -197,8 +197,6 @@ router.get('/checkAuth', verifyJwt, async (req, res) => {
 router.post('/verifyImage', async (req, res) => {
   console.log('inside verrify image')
 
-  res.status(200).json({ success: true, msg: 'success' })
-
   const { img } = req.body
   console.log(req.body)
   try {
@@ -210,7 +208,7 @@ router.post('/verifyImage', async (req, res) => {
     return res.json({ ...response.data })
   } catch (err) {
     console.error('Prediction failed:', err)
-    res.status(200).json({ success: true, msg: 'success' })
+    res.status(200).json({ success: false, msg: 'some error occured' })
   }
 })
 export default router
