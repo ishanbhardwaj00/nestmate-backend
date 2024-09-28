@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import express from 'express'
 import cookieParser from 'cookie-parser'
 import cors from 'cors'
@@ -9,10 +10,11 @@ import jwt from 'jsonwebtoken'
 import { MongoClient } from 'mongodb'
 import axios from 'axios'
 
+
 const app = express()
 app.use(
   cors({
-    origin: 'https://nestmate-frontend-deeed11ba11b.herokuapp.com',
+    origin: 'https://web-production-c52c.up.railway.app/',
     methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE', 'OPTIONS', 'UPDATE'],
     credentials: true,
   })
