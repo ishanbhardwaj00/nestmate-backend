@@ -236,6 +236,6 @@ app.post('/api/chats/read', verifyJwt, async (req, res) => {
 
 const server = http.createServer(app)
 createSocketServer(server)
-server.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`)
+server.listen(8080, () => {
+  console.log(`Server is running on port 8080`)
 })
