@@ -12,7 +12,11 @@ import axios from 'axios'
 
 
 const app = express()
-app.use(cors())
+app.use(cors({
+    origin: 'https://web-production-c52c.up.railway.app', // Your frontend URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
+    credentials: true // If you need to allow credentials (like cookies)
+}));
 app.use(express.json({ limit: '50mb' }))
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
