@@ -14,7 +14,7 @@ import axios from 'axios'
 const app = express()
 app.use(
   cors({
-    origin: ['http://localhost:5000', 'https://web-production-c52c.up.railway.app'],
+    origin: ['http://localhost:5000', 'https://nestmate.up.railway.app'],
     credentials: true,
   })
 );
