@@ -12,13 +12,11 @@ import axios from 'axios'
 
 
 const app = express()
-app.use(
-  cors({
-    origin: 'https://web-production-c52c.up.railway.app/',
-    methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE', 'OPTIONS', 'UPDATE'],
-    credentials: true,
-  })
-)
+app.use(cors({
+    origin: 'https://web-production-c52c.up.railway.app', // Your frontend URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
+    credentials: true // If you need to allow credentials (like cookies)
+}));
 app.use(express.json({ limit: '50mb' }))
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
@@ -238,6 +236,6 @@ app.post('/api/chats/read', verifyJwt, async (req, res) => {
 
 const server = http.createServer(app)
 createSocketServer(server)
-server.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`)
+server.listen(8080, () => {
+  console.log(`Server is running on port 8080`)
 })
