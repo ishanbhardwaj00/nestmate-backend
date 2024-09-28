@@ -12,13 +12,7 @@ import axios from 'axios'
 
 
 const app = express()
-app.use(
-  cors({
-    origin: '*',
-    methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE', 'OPTIONS', 'UPDATE'],
-    credentials: true,
-  })
-)
+app.use(cors())
 app.use(express.json({ limit: '50mb' }))
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
